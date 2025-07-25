@@ -1,4 +1,11 @@
 import { useState } from 'react';
+
+interface VideoConferenceProps {
+  userName: string;
+  cameraEnabled: boolean;
+  micEnabled: boolean;
+  roomName: string;
+}
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { 
@@ -37,9 +44,9 @@ interface ChatMessage {
   timestamp: Date;
 }
 
-const VideoConference = () => {
-  const [isVideoOn, setIsVideoOn] = useState(true);
-  const [isAudioOn, setIsAudioOn] = useState(true);
+const VideoConference: React.FC<VideoConferenceProps> = ({ userName, cameraEnabled, micEnabled, roomName }) => {
+  const [isVideoOn, setIsVideoOn] = useState(cameraEnabled);
+  const [isAudioOn, setIsAudioOn] = useState(micEnabled);
   const [isChatOpen, setIsChatOpen] = useState(false);
   const [isInCall, setIsInCall] = useState(true);
   const [chatMessage, setChatMessage] = useState('');
@@ -47,7 +54,7 @@ const VideoConference = () => {
 
   // Mock participants data
   const [participants] = useState<Participant[]>([
-    { id: '1', name: 'You', isVideoOn: true, isAudioOn: true, isSpeaking: false },
+    { id: '1', name: userName, isVideoOn: cameraEnabled, isAudioOn: micEnabled, isSpeaking: false },
     { id: '2', name: 'Alice Johnson', isVideoOn: true, isAudioOn: true, isSpeaking: true },
     { id: '3', name: 'Bob Smith', isVideoOn: false, isAudioOn: true, isSpeaking: false },
     { id: '4', name: 'Carol Davis', isVideoOn: true, isAudioOn: false, isSpeaking: false },
