@@ -52,16 +52,34 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				sidebar: {
-					DEFAULT: 'hsl(var(--sidebar-background))',
-					foreground: 'hsl(var(--sidebar-foreground))',
-					primary: 'hsl(var(--sidebar-primary))',
-					'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
-					accent: 'hsl(var(--sidebar-accent))',
-					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
-					border: 'hsl(var(--sidebar-border))',
-					ring: 'hsl(var(--sidebar-ring))'
-				}
+				// Video Conferencing Specific Colors
+				video: {
+					bg: 'hsl(var(--video-bg))',
+					border: 'hsl(var(--video-border))',
+					hover: 'hsl(var(--video-hover))'
+				},
+				control: {
+					bg: 'hsl(var(--control-bg))',
+					hover: 'hsl(var(--control-hover))'
+				},
+				chat: {
+					bg: 'hsl(var(--chat-bg))'
+				},
+				success: 'hsl(var(--success))',
+				warning: 'hsl(var(--warning))'
+			},
+			backgroundImage: {
+				'gradient-primary': 'var(--gradient-primary)',
+				'gradient-bg': 'var(--gradient-bg)',
+				'gradient-card': 'var(--gradient-card)'
+			},
+			boxShadow: {
+				'purple': 'var(--shadow-purple)',
+				'elevated': 'var(--shadow-elevated)'
+			},
+			transitionTimingFunction: {
+				'smooth': 'var(--transition-smooth)',
+				'bounce': 'var(--transition-bounce)'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
